@@ -197,6 +197,8 @@ The Terraform console is a command-line tool that provides an interactive enviro
 
 The `terraform --auto-approve` command allows for automatic execution of Terraform changes without requiring manual confirmation, streamlining deployment in automated workflows.
 
+### Terraform Destroy
+`terraform destroy` is a Terraform command that initiates the process of tearing down or destroying the infrastructure resources defined in the Terraform configuration. It reverses the changes made by a previous `terraform apply` operation, effectively decommissioning and deleting the resources to bring  infrastructure back to its initial state or as specified in the configuration. This command should be used with caution, as it can lead to the permanent removal of infrastructure resources.
 
 ### Terraform Lock Files
 
