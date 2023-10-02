@@ -212,3 +212,37 @@ Terraform state files, usually `terraform.tfstate`, store the current state of m
 
 ### Terraform Directory
 A Terraform directory is a folder or directory in the file system for organizing and storing Terraform configuration files, including `.tf` files, modules, and any other necessary files like variable definitions or provider configurations. It serves as the workspace where infrastructure-as-code projects using Terraform are defined and managed.
+
+## Issues with Terraform Cloud Login and Gitpod Workspace
+
+When attempting to run `terraform login` it will launch bash in a WYSIWG view to generate a token; howwver, it does not work as expected in Gitpod VS Code in the browser.
+
+The workaround is to manually generate a token in Terraform Cloud
+
+```
+https://app.terraform.io/app/settings/tokens
+```
+
+Then create the file manually like so:
+
+```sh
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+And then open the file thus:
+
+```sh
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+
+And then paste this code in the file, filling in your token in place of *"YOUR-TERRAFORM-TOKEN-HERE"*
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "YOUR-TERRAFORM-CLOUD-TOKEN-HERE"
+    }
+  }
+}
+```
