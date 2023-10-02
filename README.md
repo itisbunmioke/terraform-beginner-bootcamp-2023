@@ -246,3 +246,5 @@ And then paste this code in the file, filling in your token in place of *"YOUR-T
   }
 }
 ```
+
+This workaround was automated with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
