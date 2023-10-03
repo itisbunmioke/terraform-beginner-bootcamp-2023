@@ -117,7 +117,7 @@ chmod 744 ./bin/install_terraform_cli
 
 https://en.wikipedia.org/wiki/Chmod
 
-## Gitpod Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle
 
 Care should be taken with `Init` as it will not rerun if an existing workspace is restarted.
 
