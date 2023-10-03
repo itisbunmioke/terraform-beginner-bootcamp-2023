@@ -1,8 +1,6 @@
 
 # Terraform Beginner Bootcamp 2023!
 
-## Table of Contents
-
 ## Semantic Versioning
 
 The project will be using semantic versioning to tag changes. Source: [semver.org](https://semver.org).
