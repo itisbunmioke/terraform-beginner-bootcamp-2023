@@ -37,7 +37,7 @@ This helps to
 - more easily debug and manually execute Terraform CLI install
 - allow better portability for subsequent projects that will require Terraform CLI install
 
-###How to check your Linux type
+### How to check your Linux type
 
 An example of how to check OS 
 ```sh
