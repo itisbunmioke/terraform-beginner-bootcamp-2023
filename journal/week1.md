@@ -57,3 +57,35 @@ When variable values are placed in an auto.tfvars file in the Terraform project 
 
 ### Order of Terraform Variables
 
+In Terraform, variable values are assigned in the following order of precedence:
+
+1. Environment Variables
+1. Command-Line Flags
+1. Variable Files
+1. Default Values in Variable Declarations
+1. Interactive Input
+1. Data Source Values
+1. Remote Backend (Terraform Cloud)
+
+Values from higher-precedence sources override lower-precedence ones.
+
+## Dealing with Configuration Drift
+
+## What happens if we lose our state file?
+
+If state file is lost, all the cloud infrastructure needs to be torn down manually
+
+terraform import can be used but it won't work for all cloud resource. The Terraform providers' documentation needs to be checked for which resources support import.
+
+### Fix Missing Resources with Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
+### Fix Manual Configuration
+
+If someone goes and delete or modifies cloud resource manually through ClickOps.
+
+If we run Terraform plan in an attempt to put our infrastructure back into the expected state fixing Configuration Drift
