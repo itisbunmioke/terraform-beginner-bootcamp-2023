@@ -35,13 +35,3 @@ variable "error_html_filepath" {
     error_message = "The specified error_html_filepath is not a valid file path."
   }
 }
-
-variable "content_version" {
-  description = "The content version number (positive integer starting at 1)"
-  type        = number
-  validation {
-    condition     = can(regex("^[1-9][0-9]*$", var.content_version))
-    error_message = "Content version must be a positive integer starting at 1."
-  }
-  default = 1 # You can change the default value if needed
-}
