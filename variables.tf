@@ -1,15 +1,20 @@
 variable "user_uuid" {
-    type        = string
+  type = string
 }
 
 variable "bucket_name" {
-  type        = string
+  type = string
 }
 
 variable "index_html_filepath" {
-  type        = string
+  type = string
 }
 
 variable "error_html_filepath" {
-  type        = string
+  type = string
+}
+
+variable "content_version" {
+  description = "The content version number (positive integer starting at 1)"
+  type        = number
 }
