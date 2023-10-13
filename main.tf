@@ -7,18 +7,18 @@ terraform {
   }
   #backend "remote" {
   #  hostname = "app.terraform.io"
-  #  organization = "ExamPro"
+  #  organization = "EuKnighT_Inc"
 
   #  workspaces {
   #    name = "terra-house-1"
   #  }
   #}
-  #cloud {
-  #  organization = "ExamPro"
-  #  workspaces {
-  #    name = "terra-house-1"
-  #  }
-  #}
+  cloud {
+   organization = "EuKnighT_Inc"
+   workspaces {
+     name = "terra-house-1"
+   }
+  }
 
 }
 
@@ -28,14 +28,11 @@ provider "terratowns" {
   token = var.terratowns_access_token
 }
 
-module "terrahouse_aws" {
- source = "./modules/terrahouse_aws"
+module "home_ageofempires_hosting" {
+ source = "./modules/terrahome_aws"
  user_uuid = var.teacherseat_user_uuid
- bucket_name = var.bucket_name
- index_html_filepath = var.index_html_filepath
- error_html_filepath = var.error_html_filepath
- content_version = var.content_version
- assets_path = var.assets_path
+ public_path = var.ageofempires.public_path
+ content_version = var.ageofempires.content_version
 }
 
 resource "terratowns_home" "home" {
@@ -53,8 +50,27 @@ Age of Empires II also includes a captivating single-player campaign that spans 
 
 With its combination of deep strategy, historical authenticity, and engaging gameplay, Age of Empires II: The Age of Kings has earned its place as a timeless classic in the world of real-time strategy gaming.
 DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_ageofempires_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
   town = "gamers-grotto"
-  content_version = 1
+  content_version = var.ageofempires.content_version
+}
+
+
+module "home_movielines_hosting" {
+ source = "./modules/terrahome_aws"
+ user_uuid = var.teacherseat_user_uuid
+ public_path = var.movielines.public_path
+ content_version = var.movielines.content_version
+
+}
+
+resource "terratowns_home" "home_movielines" {
+  name = "Memorable Lines from Movies & TV Series"
+  description = <<DESCRIPTION
+O, the multitude of movies! What's not to like about them. And oh the many websites dedicated to them. I decided to rather dedicate this site to spolight famous or outstanding lines across the host of them–and maybe even toss in trivia game into the mix.
+DESCRIPTION
+  domain_name = module.home_movielines_hosting.domain_name
+  town = "video-valley"
+  content_version = var.movielines.content_version
 }
