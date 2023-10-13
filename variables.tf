@@ -7,27 +7,19 @@ variable "terratowns_access_token" {
 }
 
 variable "teacherseat_user_uuid" {
-  type = string
+ type = string
 }
 
-variable "bucket_name" {
-  type = string
+variable "ageofempires" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "index_html_filepath" {
-  type = string
-}
-
-variable "error_html_filepath" {
-  type = string
-}
-
-variable "content_version" {
-  description = "The content version number (positive integer starting at 1)"
-  type        = number
-}
-
-variable "assets_path" {
-  description = "Path to assets folder"
-  type = string  
+variable "movielines" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
