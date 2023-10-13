@@ -4,26 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Lines</title>
-    <link rel="stylesheet" href="/movielines/styles.css">
+<style>
+    /* Reset some default browser styles */
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f5f5f5; */
+}
+
+
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#movie-list {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#movies {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: calc(33.33% - 20px); /* 3 columns with some spacing */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    /* background-color: #333; */
+    color: white;
+    padding: 10px;
+    background-image: url('./assets/action -pexels-photo-3945317.jpeg');
+            
+    /* Specify background properties */
+    background-size: cover; /* Cover the entire element */
+    background-repeat: no-repeat; /* Don't repeat the image */
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Add more CSS for styling as needed */
+
+</style>
 </head>
 <body>
     <header>
-        <h1>Movie Lines</h1>
-        <img src="/assets/movies pexels-photo-1200450.jpeg" alt="">
+        <h1>Memorable Movie Lines</h1>
+        <img src="./assets/movies pexels-photo-1200450.jpeg" alt="">
     </header>
     <main>
         <section id="movie-list">
             <h2>Featured Movies</h2>
             <ul id="movies">
                 <li>
-                    <img src="movie1.jpg" alt="Movie 1">
-                    <h3>Movie 1</h3>
-                    <p>"Favorite line from Movie 1."</p>
+                    <img src="./assets/breaking bad.jpg" alt="breaking-bad">
+                    <h3>Breaking Bad</h3>
+                    <p>"I am not in danger, Skyler. I am the danger."</p>
                 </li>
                 <li>
-                    <img src="movie2.jpg" alt="Movie 2">
-                    <h3>Movie 2</h3>
-                    <p>"Favorite line from Movie 2."</p>
+                    <img src="./assets/coming-soonpexels-photo-3137890.webp" alt="gemini-man">
+                    <h3>Gemini Man</h3>
+                    <p>"You can tell me now or you can tell me in five minutes without all your teeth."</p>
+                </li>
+                <li>
+                    <img src="./assets/house-of-cards.jpg" alt="house-of-cards" width="300px">
+                    <h3>House of Cards</h3>
+                    <p>"Tom, don't cheat on my wife."</p>
                 </li>
                 <!-- Add more movies and their lines here -->
             </ul>
